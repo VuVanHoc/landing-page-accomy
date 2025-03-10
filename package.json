@@ -2,13 +2,29 @@
 	"name": "landing-page-accomy",
 	"version": "0.1.0",
 	"private": true,
+	"cloudflare": {
+		"label": "Hashtrips",
+		"products": [
+			"Workers"
+		],
+		"categories": [],
+		"icon_urls": [
+			"https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/5ca0ca32-e897-4699-d4c1-6b680512f000/public"
+		],
+		"preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/e42eec61-db86-49c8-7b29-c3ed4783e400/public"
+	},
 	"scripts": {
 		"dev": "next dev --turbopack",
 		"build": "next build",
+		"check": "opennextjs-cloudflare && tsc && wrangler deploy --dry-run",
+		"deploy": "opennextjs-cloudflare && wrangler deploy",
+		"preview": "opennextjs-cloudflare && wrangler dev",
+		"types": "wrangler types --env-interface CloudflareEnv env.d.ts",
 		"start": "next start",
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@opennextjs/cloudflare": "^0.5.10",
 		"clsx": "^2.1.1",
 		"motion": "^12.4.10",
 		"next": "15.2.1",
