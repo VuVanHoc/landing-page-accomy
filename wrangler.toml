@@ -1,0 +1,3 @@
+name = "landing-page-accomy"
+type = "javascript"
+main = ".next/server/pages/_app.js"
